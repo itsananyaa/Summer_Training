@@ -1,0 +1,42 @@
+
+using namespace std;
+
+int main() {
+
+    int T;
+
+    cin >> T;
+
+    while (T--) {
+
+        int costGreen, costPurple, n;
+
+        cin >> costGreen >> costPurple >> n;
+
+        vector<pair<int, int>> participants(n);
+
+        for (int i = 0; i < n; ++i) {
+
+            cin >> participants[i].first >> participants[i].second;
+
+        }
+
+        int cost1 = 0, cost2 = 0;
+
+        for (int i = 0; i < n; ++i) {
+
+            cost1 += participants[i].first * costGreen + participants[i].second * costPurple;
+
+            cost2 += participants[i].first * costPurple + participants[i].second * costGreen;
+
+        }
+
+        cout << min(cost1, cost2) << endl;
+
+    }
+
+    return 0;
+
+}
+
+
