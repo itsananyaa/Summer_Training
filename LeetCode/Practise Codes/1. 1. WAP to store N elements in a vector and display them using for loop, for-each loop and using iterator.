@@ -1,0 +1,20 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter n: ";
+    cin >> n;
+    vector<int> dis(n);
+    for(auto i = 0; i < dis.size(); i++)
+    {
+        cin >> dis[i];
+    }
+    for(int i : dis)
+    {
+        cout << i << " ";
+    }
+    return 0;
+}
