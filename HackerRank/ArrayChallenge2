@@ -1,0 +1,38 @@
+
+using namespace std;
+
+int main() {
+
+    int arraySize;
+
+    cin >> arraySize;
+
+    int count = 1;  
+
+    int maxValue;
+
+    int array[arraySize];
+
+    cin >> array[0];
+
+    maxValue = array[0];  
+
+    for (int i = 1; i < arraySize; i++) {
+
+        cin >> array[i];
+
+        if (array[i] > maxValue) {
+
+            count++;
+
+            maxValue = array[i];
+
+        }
+
+    }
+
+    cout << count;
+
+    return 0;
+
+}
