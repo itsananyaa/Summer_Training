@@ -1,1 +1,30 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter N: ";
+    cin >> n;
+    int i;
+    vector<int> dupli(n);
+    for(i = 0; i < dupli.size(); i++)
+    {
+        cin >> dupli[i];
+    }
+    sort(dupli.begin(), dupli.end());
+    for(i = 0; i < dupli.size() - 1; i++)
+    {
+        if(dupli[i] == dupli[i + 1])
+        {
+            dupli.erase(dupli.begin() + (i + 1));
+        }
+    }
+    for(int j = 0; j < dupli.size(); j++)
+    {
+        cout << dupli[j] << " ";
+    }
+}
 
