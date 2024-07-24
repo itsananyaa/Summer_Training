@@ -1,0 +1,63 @@
+
+using namespace std;
+string getDayOfWeek(int day, int month, int year) {
+
+    // Adjust month and year for January and February
+
+    if (month == 1 || month == 2) {
+
+        month += 12;
+
+        year -= 1;
+
+    }
+
+    int k = day;
+
+    int m = month;
+
+    int D = year % 100;
+
+    int C = year / 100;
+
+    // Calculate F using Zeller's Rule
+
+    int F = k + (13 * (m + 1)) / 5 + D + D / 4 + C / 4 - 2 * C;
+
+    // Adjust for positive remainder
+
+    int remainder = F % 7;
+
+    if (remainder < 0) {
+
+        remainder += 7;
+
+    }
+
+    // Map remainder to day of the week
+
+    string daysOfWeek[] = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+
+    return daysOfWeek[remainder];
+
+}
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+
+    int day, month, year;
+
+    
+
+    // Read input date
+
+    cin >> day >> month >> year;
+
+    // Calculate and print the day of the week
+
+    cout << getDayOfWeek(day, month, year) << endl;
+
+    return 0;
+
+}
