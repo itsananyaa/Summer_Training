@@ -1,0 +1,72 @@
+
+using namespace std;
+
+int main() {
+
+    int N;
+
+    cin >> N;
+
+    
+
+    int max_lead = 0;
+
+    int current_lead = 0;
+
+    int winner = 1;
+
+    
+
+    int cumulative_p1 = 0, cumulative_p2 = 0;
+
+    
+
+    for (int i = 0; i < N; ++i) {
+
+        int S, T;
+
+        cin >> S >> T;
+
+        
+
+        cumulative_p1 += S;
+
+        cumulative_p2 += T;
+
+        
+
+        // Calculate lead after this round
+
+        current_lead = abs(cumulative_p1 - cumulative_p2);
+
+        
+
+        // Check if current lead is maximum
+
+        if (current_lead > max_lead) {
+
+            max_lead = current_lead;
+
+            if (cumulative_p1 > cumulative_p2) {
+
+                winner = 1;
+
+            } else {
+
+                winner = 2;
+
+            }
+
+        }
+
+    }
+
+    
+
+    cout << winner << " " << max_lead << endl;
+
+    
+
+    return 0;
+
+}
