@@ -6,12 +6,12 @@ int main()
 {
     int n;
     cout << "Enter Number of Elements to be inputed: ";
-    cin >> n;
-    vector<int> occurence(n);
+    cin >> n; // Read the number of elements
+    vector<int> occurence(n); // Create a vector of size n
 
     for(auto i = 0; i < occurence.size(); i++)
     {
-        cin >> occurence[i];
+        cin >> occurence[i]; // Read elements into the vector
     }
     for(auto i = 0; i < occurence.size() - 1; i++)
     {
@@ -19,7 +19,7 @@ int main()
         {
             if(occurence[i] == occurence[j])
             {
-                occurence.erase(occurence.begin() + j);
+                occurence.erase(occurence.begin() + j); // Remove duplicate elements
             }
             else
             {
@@ -29,7 +29,7 @@ int main()
     }
     for(auto i = 0; i < occurence.size(); i++)
     {
-        cout << occurence[i] << "\t";
+        cout << occurence[i] << "\t"; // Print the unique elements
     }
     return 0;
 }
