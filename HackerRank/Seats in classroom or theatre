@@ -1,0 +1,44 @@
+
+using namespace std;
+
+int getFactorial(int n) {
+
+    int factorial = 1;
+
+    for (int i = 1; i <= n; ++i) {
+
+        factorial *= i;
+
+    }
+
+    return factorial;
+
+}
+
+int calculatePermutations(int n, int r) {
+
+    return getFactorial(r) / getFactorial(r - n);
+
+}
+
+int main() {
+
+    int n, r;
+
+    cin >> n;
+
+    cin >> r;
+
+    if (n > r) {
+
+        cout << "Cannot adjust " << n << " people on " << r << " seats" << endl;
+
+    } else {
+
+        cout << calculatePermutations(n, r) << endl;
+
+    }
+
+    return 0;
+
+}
