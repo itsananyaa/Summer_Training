@@ -1,0 +1,52 @@
+
+using namespace std;
+
+int main() {
+
+    int T;
+
+    cin >> T;
+
+    int entering[T];
+
+    int leaving[T];
+
+    // Input the number of students entering and leaving
+
+    for (int i = 0; i < T; ++i) {
+
+        cin >> entering[i];
+
+    }
+
+    for (int i = 0; i < T; ++i) {
+
+        cin >> leaving[i];
+
+    }
+
+    // Calculate maximum number of students present at any instance
+
+    int currentStudents = 0;
+
+    int maxStudents = 0;
+
+    for (int i = 0; i < T; ++i) {
+
+        currentStudents += entering[i] - leaving[i];
+
+        if (currentStudents > maxStudents) {
+
+            maxStudents = currentStudents;
+
+        }
+
+    }
+
+    // Output the maximum number of students present
+
+    cout << maxStudents << endl;
+
+    return 0;
+
+}
