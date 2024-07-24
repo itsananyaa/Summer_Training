@@ -1,1 +1,28 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    int n, j;
+    cout << "Enter no. elements to be inserted: ";
+    cin >> n;
+    vector<int> ob(n);
+    for(auto i = 0; i < ob.size(); i++)
+    {
+        cin >> ob[i];
+    }
+    for(int i : ob)
+    {
+        cout << i << " ";
+    }
+    cout << "Enter Element index: ";
+    cin >> j;
+    ob.erase(ob.begin() + j);
+    for(auto i = ob.begin(); i < ob.end(); i++)
+    {
+        cout << *i << " ";
+    }
+    return 0;
+}
 
