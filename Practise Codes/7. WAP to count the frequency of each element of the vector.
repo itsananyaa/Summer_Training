@@ -5,30 +5,26 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cout << "Enter N: ";
-    cin >> n;
-    vector<int> vec(n);
-    vector<int> vec1(n);
-    for(int i = 0; i < vec.size(); i++)
-    {
-        cin >> vec[i];
-    }
-    cout << "Vector 1" << endl;
-    for(int i = 0; i < vec.size(); i++)
-    {
-        cout << vec[i] << " ";
-    }
-    for(int i = 0; i < vec.size(); i++)
-    {
-        vec1[i] = vec[i];
-    }
-    cout << endl << "Vector 2: " << endl;
-    for(int i = 0; i < vec.size(); i++)
-    {
-        cout << vec1[i] << " ";
-    }
+    int n, count = 0;
+    cout << "Enter Number: ";
+    cin >> n; // Read the number of elements
 
-    return 0;
+    vector<int> freq(n); // Create a vector of size n
+    
+    for(int i = 0; i < freq.size(); i++)
+    {
+        cin >> freq[i]; // Read elements into the vector
+    }
+    for(int i = 0; i < freq.size(); i++)
+    {
+        for(int j = 0; j < freq.size(); j++)
+        {
+            if(freq[i] == freq[j])
+            {
+                count++; // Count frequency of each element
+            }
+        }
+        cout << freq[i] << "=" << count << endl; // Print the element and its frequency
+        count = 0; // Reset the count for the next element
+    }
 }
-
