@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int occursOnce(vector<int> &a, int n) {
+    map<int, int> count;
+    for(int i=0; i<n; i++) {
+        count[a[i]]++;
+    }
+    for(int i=0; i<n; i++) {
+        if (count[a[i]]==1){ 
+          return a[i];
+        }
+    }
+    return -1;
+}
