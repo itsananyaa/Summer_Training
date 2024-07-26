@@ -1,1 +1,5 @@
-#   It has various leetcode codes as hackerranks codes too.
+## All codes done on various platforms.
+-  LeetCode
+- HackerRank
+- Coding Ninja
+- Some practice codes 
