@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int numRookCaptures(vector<vector<char>>& board) {
+        int rookRow = -1, rookCol = -1;
+        for (int i = 0; i< 8 && rookRow == -1; ++i){ 
+            for (int j=0; j<8 && rookCol == -1; ++j){
+                if (board[i][j] == 'R'){
+                    rookRow = i;
+                    rookCol = j;
+                }
+            }
+        }
+        int captures = 0;
+    int directions[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+    for (auto& dir : directions){
+       int x = rookRow + dir[0], y = rookCol + dir[1];
+       while (x >= 0 && x < 8 && y >= 0 && y < 8) {
+        if (board[x][y] == 'B') break;
+        if (board[x][y] == 'p') {
+            ++captures;
+            break;
+        }
+        x += dir[0];
+        y += dir[1];
+     }
+    }
+    return captures;
+    }
+};
