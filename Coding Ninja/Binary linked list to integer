@@ -1,0 +1,7 @@
+int decimal_value = 0;
+    Node *current = head;
+    while (current != NULL) {
+        decimal_value = (decimal_value << 1) | current->data;
+        current = current->next;
+    }
+    return decimal_value;
