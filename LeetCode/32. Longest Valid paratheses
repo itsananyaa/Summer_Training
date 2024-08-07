@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int longestValidParentheses(string s) {
+        int max_length = 0;
+        stack<int> stk;
+        stk.push(-1); // Push index -1 to indicate the start of the string
+        
+        for (int i = 0; i < s.length(); ++i) {
+            if (s[i] == '(') {
+                stk.push(i); // Push the index of '(' to the stack
+            } else { // s[i] == ')'
+                stk.pop(); // Pop the top element of the stack
+                
+                if (!stk.empty()) {
+                    max_length = max(max_length, i - stk.top()); // Update max_length
+                } else {
+                    stk.push(i); // Push the index of ')' to the stack to mark the end of the invalid substring
+                }
+            }
+        }
+        
+        return max_length;
+    }
+};
