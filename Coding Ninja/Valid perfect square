@@ -1,0 +1,17 @@
+#include <bits/stdc++.h> 
+
+bool isPerfectSquare(long long n) { 
+	if(n>0){
+		long long int x=sqrt(n);
+		return x*x==n;
+	}
+}
+
+second solution->
+#include <bits/stdc++.h> 
+
+bool isPerfectSquare(long long n) { 
+	double root=sqrt(n);
+    long long x=static_cast<long long>(root); 
+    return x*x==n;
+}
